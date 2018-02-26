@@ -1,0 +1,60 @@
+users:
+  me:
+    username: me
+    articleIds:
+      - 1
+    commentIds:
+      - 2
+  bob:
+    username: bob
+    articleIds: []
+    commentIds:
+      - 1
+  joe@smith.com:
+    username: joe@smith.com
+    articleIds:
+      - 2
+    commentIds: []
+articles:
+  '1':
+    id: 1
+    title: new article!!! new edits
+    url: www.newarticles.com
+    username: me
+    commentIds:
+      - 1
+    upvotedBy:
+      - me
+    downvotedBy: []
+    comments:
+      - &ref_0
+        id: 1
+        username: bob
+        articleId: 1
+        body: Happy
+        upvotedBy:
+          - bob
+        downvotedBy: []
+  '2':
+    id: 2
+    title: Article by Joe
+    url: www.example.com
+    username: joe@smith.com
+    commentIds:
+      - 2
+    upvotedBy: []
+    downvotedBy:
+      - joe@smith.com
+      - me
+    comments: []
+nextArticleId: 3
+comments:
+  '1': *ref_0
+  '2':
+    id: 2
+    username: me
+    articleId: 2
+    body: Comment by me
+    upvotedBy: []
+    downvotedBy: []
+nextCommentId: 3
